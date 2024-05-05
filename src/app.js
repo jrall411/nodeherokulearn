@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const http = require('http')
 const path = require('path')
+// echo deply
 
 console.log(__dirname)
 console.log(path.join(__dirname, '../public'))
