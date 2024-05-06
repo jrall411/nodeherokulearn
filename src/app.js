@@ -23,6 +23,23 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
+app.get('/post', (request, response) => {
+    let body = [];
+    request.on('data', (chunk) => {
+        body.push(chunk);
+    }).on('end', () => {
+        body = Buffer.concat(body).toString();
+
+	console.log(`==== ${request.method} ${request.url}`);
+	console.log('> Headers');
+        console.log(request.headers);
+    response.send(body)
+	console.log('> Body');
+	console.log(body);
+        response.end();
+    });
+})
+
 app.get('/echo', (request, response) => {
     let body = [];
     request.on('data', (chunk) => {
