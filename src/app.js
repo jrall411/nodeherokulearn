@@ -33,7 +33,7 @@ app.get('/echo', (request, response) => {
 	console.log(`==== ${request.method} ${request.url}`);
 	console.log('> Headers');
         console.log(request.headers);
-
+    response.send(body)
 	console.log('> Body');
 	console.log(body);
         response.end();
