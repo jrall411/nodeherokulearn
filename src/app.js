@@ -23,7 +23,7 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
-app.get('/post', (request, response) => {
+app.post('/echo', (request, response) => {
     let body = [];
     request.on('data', (chunk) => {
         body.push(chunk);
